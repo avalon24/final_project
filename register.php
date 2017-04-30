@@ -30,7 +30,19 @@
 	    <option value="Female">Female
 	    <option value="Male">Male
 	    <option value="Other">Other
-	</select><br><br>
+	</select><br>
+
+        <h4>Select a secret question from below for password reset</h4>
+	<label>Question: </label>
+	<select name="reset_ques">
+            <option value="Q1">What is your favorite color?
+	    <option value="Q2">What is your mother's maiden name?
+	    <option value="Q3">What is the name of your favorite movie?
+	    <option value="Q4">What is your favorite cuisine?
+	</select><br>
+
+	<label>Answer:</label>
+	<input type="text" name="reset_ans"><br><br>
 
 	<label>&nbsp; </label>
         <input type="submit" value="submit">
