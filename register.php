@@ -1,4 +1,4 @@
-<?php include 'view/fp_header';?>
+<?php include 'view/fp_header.php';?>
 <main>
     <h4>Enter your personal details below:</h4>
     <form action="index.php" method="post" id="register_form">
@@ -16,6 +16,12 @@
 	<label>Phone No: </label>
         <input type="text" name="contact"><br><br>
 
+        <label>New Password: </label>
+	<input type="password" name="password"><br>
+
+	<label>Reenter Password: </label>
+	<input type="text" name="pass_temp"><br><br>
+
 	<label>Date of Birth: </label>
         <input type="date" name="dob"><br>
 
@@ -24,11 +30,11 @@
 	    <option value="Female">Female
 	    <option value="Male">Male
 	    <option value="Other">Other
-	</select><br>
+	</select><br><br>
 
 	<label>&nbsp; </label>
         <input type="submit" value="submit">
     </form>
 
 </main>
-<?php include 'view/fp_footer';?>
+<?php include 'view/fp_footer.php'; ?>
