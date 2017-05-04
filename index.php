@@ -26,12 +26,12 @@ require('../final_project/model/db_function.php');
 	    if($result[0]['u_password'] == $password) {
 	        header ("Location: ./todo/home.php");
             } else {
-	        $error = "Incorrect Password!!";
-	        include ('./errors/error.php');
+	        $message = "Incorrect Password!!";
+	        include ('./login.php');
 	    }
         } else {
-	    $error = "User ID does not exist!!";
-            include ('./errors/error.php');
+	    $message = "User ID does not exist!!";
+            include ('./login/error.php');
 	}
     } else if($action == 'new_user') {
         echo "3rd case";
