@@ -1,6 +1,6 @@
 <?php include '../view/fp_header.php'; ?>
 <main>
-    <h4>Welcome...</h4>
+    <h4>Welcome...<?php echo $fname?>!!</h4>
     <a href="#List of incomplete items">List of incomplete items</a><br>
     <a href="#List of complete items">List of complete items</a><br><br>
 
