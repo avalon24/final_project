@@ -22,8 +22,8 @@ require('../final_project/model/db_function.php');
         if($result == true) {
             include ('todo/home.php');
         } else {
-	    $error = "User ID coul;d not be matched";
-            header ("Location: ./errors/error.php");
+	    $error = "User ID could not be matched";
+            include ('./errors/error.php');
 	}
     } else if($action == 'new_user') {
         echo "3rd case";
@@ -46,14 +46,17 @@ require('../final_project/model/db_function.php');
 		if($result == false) {
 		    include ('login.php');
 		    echo "3rd case_a1i";
+		} else {
+		    $message="User email already exists! Create a new account or Try login!";
+                    include ('register.php');
 		}
 	    } else {
-	        $message="All fields must be populated!!";
-	 	header("Location: .");
+	        $message="All mandatory fields must be populated!!";
+                include ('register.php');
 	    }
 	} else {
 	    $message="Passwords do not match!!";
-	    header("Location: .");
+	    include ('register.php');
 	}
     }
 ?>
