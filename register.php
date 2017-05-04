@@ -1,5 +1,6 @@
 <?php include 'view/fp_header.php';?>
 <main>
+    <h3><?php echo $message ?></h3>
     <h4>Enter your personal details below:</h4>
     <form action="index.php" method="post" id="register_form">
         <input type="hidden" name="action" value="new_user">
@@ -37,10 +38,10 @@
         <h4>Select a secret question from below for password reset</h4>
 	<label>Question: </label>
 	<select name="reset_ques">
-            <option value="Q1">What is your favorite color?
-	    <option value="Q2">What is your mother's maiden name?
-	    <option value="Q3">What is the name of your favorite movie?
-	    <option value="Q4">What is your favorite cuisine?
+            <option value="1">What is your favorite color?
+	    <option value="2">What is your mother's maiden name?
+	    <option value="3">What is the name of your favorite movie?
+	    <option value="4">What is your favorite cuisine?
 	</select><br>
 
 	<label>Answer:</label>
