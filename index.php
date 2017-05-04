@@ -31,7 +31,7 @@ require('../final_project/model/db_function.php');
 	    }
         } else {
 	    $message = "User ID does not exist!!";
-            include ('./login/error.php');
+            include ('./login.php');
 	}
     } else if($action == 'new_user') {
         echo "3rd case";
