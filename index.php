@@ -52,6 +52,7 @@ require('../final_project/model/db_function.php');
 	        echo "3rd case_a1";
 	        $result=userCreate($fname,$lname,$phone,$dob,$gender,$uname,$password,$resetq,$reseta);
 		if($result == false) {
+		    $success="Successfully Registered! Try login now!";
 		    include ('login.php');
 		    echo "3rd case_a1i";
 		} else if($result == "exists") {
