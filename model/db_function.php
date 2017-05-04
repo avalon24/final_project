@@ -33,8 +33,8 @@ function isUserValid($uname,$password) {
               where u_email = :uname';
     $statement=$db->prepare($query);
     $statement->bindValue(':uname',$uname);
-    $statement->bindValue(':password',$password);
     $statement->execute();
+    $result=$statement->fetchAll();
     $statement->closeCursor();
     }catch(PDOException $e) {
         $error = $e->getMessage();
@@ -43,7 +43,7 @@ function isUserValid($uname,$password) {
     }
     $count=$statement->rowCount();
     if($count == 1) {
-        return true;
+        return $result;
     } else {
         return false;
     }
