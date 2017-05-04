@@ -22,7 +22,8 @@ require('../final_project/model/db_function.php');
         if($result == true) {
             include ('todo/home.php');
         } else {
-            header ("Location: ./error/error.php");
+	    $error = "User ID coul;d not be matched";
+            header ("Location: ./errors/error.php");
 	}
     } else if($action == 'new_user') {
         echo "3rd case";
@@ -47,12 +48,12 @@ require('../final_project/model/db_function.php');
 		    echo "3rd case_a1i";
 		}
 	    } else {
-	        echo "All fields must be populated!!";
-/*	 	header("Location: .");*/
+	        $message="All fields must be populated!!";
+	 	header("Location: .");
 	    }
 	} else {
-	    echo "Passwords do not match!!";
-/*	    header("Location: .");*/
+	    $message="Passwords do not match!!";
+	    header("Location: .");
 	}
     }
 ?>
