@@ -37,10 +37,12 @@ function isUserValid($uname,$password) {
     $statement->closeCursor();
     
     $count=$statement->rowCount();
-    echo "count = $count";
+    echo "count = $count ##:";
     if($count == 1) {
-        $user = $result[0]['u_fname'] + " " + $result[0]['u_lname'];
-        setcookie('login',$user);
+        $user = $result[0]['u_fname']." ".$result[0]['u_lname'];
+        echo "user = $user";
+	setcookie('login',$user);
+	/*$_COOKIE['login'] = $user;*/
 	setcookie('user_id',$result[0]['u_id']);
         return $result;
     } else {
