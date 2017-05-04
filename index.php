@@ -40,7 +40,7 @@ require('../final_project/model/db_function.php');
 	$reseta=filter_input(INPUT_POST,'reset_ans');
 	if($password === $passtemp) {
 	    echo "3rd case_a";
-	    if(isset($fname) && isset($lname) && isset($dob) && isset($uname) && isset($password) && isset($resetq) && isset($reseta)) {
+	    if($fname != NULL && $lname != NULL && $dob != NULL && $uname != NULL && $password != NULL && $resetq != NULL && $reseta != NULL) {
 	        echo "3rd case_a1";
 	        $result=userCreate($fname,$lname,$phone,$dob,$gender,$uname,$password,$resetq,$reseta);
 		if($result == false) {
