@@ -36,7 +36,7 @@ function checkUser($uname) {
     $query = 'select * from fp_users
               where u_email = :uname';
     $statement=$db->prepare($query);
-    $statement=bindValue(':uname',$uname);
+    $statement->bindValue(':uname',$uname);
     $statement->execute();
     $statement->closeCursor();
     $chk_count=$statement->rowCount();
