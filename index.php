@@ -20,9 +20,15 @@ require('../final_project/model/db_function.php');
         $password=filter_input(INPUT_POST,'user_pwd');
         $result=isUserValid($uname,$password);
         if($result == true) {
-            include ('todo/home.php');
+	    echo " ## "; echo $result[0]['u_password'];
+	    if($result[0]['u_password'] == $password) {
+	        include ('todo/home.php');
+            } else {
+	        $error = "Incorrect Password!!";
+	        include ('./errors/error.php');
+	    }
         } else {
-	    $error = "User ID could not be matched";
+	    $error = "User ID does not exist!!";
             include ('./errors/error.php');
 	}
     } else if($action == 'new_user') {
