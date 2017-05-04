@@ -2,6 +2,7 @@
 <main>
     <h1>Login Page!!</h1>
     <h3><?php echo $message ?></h3>
+    <h4><?php echo $success ?></h4>
     <form action="index.php" method="post" id="login_form">
         <input type=hidden name="action" value="user_login">
 
