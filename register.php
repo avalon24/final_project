@@ -10,27 +10,29 @@
         <label>Last Name: </label>
         <input type="text" name="l_name"><br><br>
 
-	<label>Email ID: </label>
-        <input type="text" name="email"><br>
-
-	<label>Phone No: </label>
+        <label>Phone No: </label>
         <input type="text" name="contact"><br><br>
+
+        <label>Date of Birth: </label>
+        <input type="date" name="dob"><br>
+
+        <label>Gender: </label>
+        <select name="gender">
+            <option value="Female">Female
+            <option value="Male">Male
+            <option value="Other">Other
+        </select><br>
+									     
+        <h4>Following information will be used as your <b>Login</b> credentials</h4>
+
+        <label>Email ID: </label>
+        <input type="text" name="email"><br>
 
         <label>New Password: </label>
 	<input type="password" name="password"><br>
 
 	<label>Reenter Password: </label>
-	<input type="text" name="pass_temp"><br><br>
-
-	<label>Date of Birth: </label>
-        <input type="date" name="dob"><br>
-
-	<label>Gender: </label>
-        <select name="gender">
-	    <option value="Female">Female
-	    <option value="Male">Male
-	    <option value="Other">Other
-	</select><br>
+	<input type="text" name="pass_temp"><br>
 
         <h4>Select a secret question from below for password reset</h4>
 	<label>Question: </label>
