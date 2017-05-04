@@ -6,7 +6,7 @@
         <input type=hidden name="action" value="user_login">
 
 	<label>User ID: </label>
-	<input type="text" name="user_name" />
+	<input type="text" name="user_name" placeholder="Your email ID" />
 	<br>
 
 	<label>Password: </label>
