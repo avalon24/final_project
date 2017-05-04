@@ -54,9 +54,12 @@ require('../final_project/model/db_function.php');
 		if($result == false) {
 		    include ('login.php');
 		    echo "3rd case_a1i";
-		} else {
+		} else if($result == "exists") {
 		    $message="User email already exists! Create a new account or Try login!";
                     include ('register.php');
+		} else {
+		    $message="Sorry could not register your profile! Please try again or contact admin if issue persists!";
+		    include ('register.php');
 		}
 	    } else {
 	        $message="All mandatory fields must be populated!!";
