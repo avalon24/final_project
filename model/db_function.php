@@ -28,7 +28,6 @@ function userCreate($fname,$lname,$phone,$dob,$gender,$uname,$password,$resetq,$
 function isUserValid($uname,$password) {
     global $db;
     echo "uname = $uname # pwd = $password";
-    try{
     $query = 'select * from fp_users
               where u_email = :uname';
     $statement=$db->prepare($query);
@@ -36,13 +35,13 @@ function isUserValid($uname,$password) {
     $statement->execute();
     $result=$statement->fetchAll();
     $statement->closeCursor();
-    }catch(PDOException $e) {
-        $error = $e->getMessage();
-	exit();
-	include ('../errors/error.php');
-    }
+    
     $count=$statement->rowCount();
+    echo "count = $count";
     if($count == 1) {
+        $user = $result[0]['u_fname'] + " " + $result[0]['u_lname'];
+        setcookie('login',$user);
+	setcookie('user_id',$result[0]['u_id']);
         return $result;
     } else {
         return false;
