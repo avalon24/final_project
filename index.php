@@ -14,6 +14,8 @@ require('../final_project/model/db_function.php');
     if($action == 'view_login') {
         include ('login.php');
 	echo "2nd case";
+    } else if($action == 'user_logout') {
+        include ('logout.php');
     } else if($action == 'user_login') {
         echo "4th case";
         $uname=filter_input(INPUT_POST,'user_name');
