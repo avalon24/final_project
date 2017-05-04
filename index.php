@@ -1,15 +1,28 @@
 <?php
 require('../final_project/model/database.php');
 require('../final_project/model/db_function.php');
-
-    $action=filter_input(INSERT_POST,"action");
+echo "current value of \$action = $action ###";
+    $action=filter_input(INSERT_POST,'action');
     if($action == NULL) {
-        $action = "view_login";
-	echo "1st case";
+        $action=filter_input(INPUT_GET,'action');
+        if($acttion == NULL) {
+            $action = "view_login";
+	    echo "1st case";
+	}
     }
     if($action == "view_login") {
         include ('login.php');
 	echo "2nd case";
+    } else if($action == "user_login") {
+        echo "4th case";
+        $uname=filter_input(INPUT_POST,'user_name');
+        $password=filter_input(INPUT_POST,'user_pwd');
+        $result=isUserValid($uname,$password);
+        if($result == true) {
+            include ('todo/home.php');
+        } else {
+            header ("Location: ./error/error.php");
+	}
     } else if($action == "new_user") {
         echo "3rd case";
         $fname=filter_input(INPUT_POST,'f_name');
@@ -40,14 +53,5 @@ require('../final_project/model/db_function.php');
 	    echo "Passwords do not match!!";
 /*	    header("Location: .");*/
 	}
-    } else if($action == "user_login") {
-        $uname=filter_input(INPUT_POST,'user_name');
-        $password=filter_input(INPUT_POST,'user_pwd');
-        $result=isUserValid($uname,$password);
-        if($result == true) {
-            header ("Location: ./todo/home.php");
-        } else {
-            header ("Location: ./error/error.php");
-        }
     }
 ?>
