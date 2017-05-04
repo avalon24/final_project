@@ -22,7 +22,7 @@ require('../final_project/model/db_function.php');
         if($result == true) {
 	    echo " ## "; echo $result[0]['u_password'];
 	    if($result[0]['u_password'] == $password) {
-	        include ('todo/home.php');
+	        header ("Location: ./todo/home.php");
             } else {
 	        $error = "Incorrect Password!!";
 	        include ('./errors/error.php');
