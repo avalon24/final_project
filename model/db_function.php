@@ -27,14 +27,20 @@ function userCreate($fname,$lname,$phone,$dob,$gender,$uname,$password,$resetq,$
 
 function isUserValid($uname,$password) {
     global $db;
+    echo "uname = $uname # pwd = $password";
+    try{
     $query = 'select * from fp_users
-              where u_email = :uname');
+              where u_email = :uname';
     $statement=$db->prepare($query);
     $statement->bindValue(':uname',$uname);
     $statement->bindValue(':password',$password);
     $statement->execute();
     $statement->closeCursor();
-
+    }catch(PDOException $e) {
+        $error = $e->getMessage();
+	exit();
+	include ('../errors/error.php');
+    }
     $count=$statement->rowCount();
     if($count == 1) {
         return true;
