@@ -1,19 +1,20 @@
 <?php
 require('../final_project/model/database.php');
 require('../final_project/model/db_function.php');
-echo "current value of \$action = $action ###";
-    $action=filter_input(INSERT_POST,'action');
+
+    $action=filter_input(INPUT_POST,'action');
+    echo "current value of action = $action ##";
     if($action == NULL) {
         $action=filter_input(INPUT_GET,'action');
-        if($acttion == NULL) {
+        if($action == NULL) {
             $action = "view_login";
 	    echo "1st case";
 	}
     }
-    if($action == "view_login") {
+    if($action == 'view_login') {
         include ('login.php');
 	echo "2nd case";
-    } else if($action == "user_login") {
+    } else if($action == 'user_login') {
         echo "4th case";
         $uname=filter_input(INPUT_POST,'user_name');
         $password=filter_input(INPUT_POST,'user_pwd');
@@ -23,7 +24,7 @@ echo "current value of \$action = $action ###";
         } else {
             header ("Location: ./error/error.php");
 	}
-    } else if($action == "new_user") {
+    } else if($action == 'new_user') {
         echo "3rd case";
         $fname=filter_input(INPUT_POST,'f_name');
         $lname=filter_input(INPUT_POST,'l_name');
