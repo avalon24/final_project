@@ -14,4 +14,18 @@ function getTodoItems($user_id,$status) {
     return $result;
 }
 
+function addTodoItems($user,$date,$time,$desc,$stat) {
+    global $db;
+    $query='insert into fp_todo_list(t_u_id,t_date,t_time,t_desc,t_status)
+                 values (:user,:date,:time,:desc,:stat)';
+    $statement=$db->prepare($query);
+    $statement->bindValue(':user',$user);
+    $statement->bindValue(':date',$date);
+    $statement->bindValue(':time',$time);
+    $statement->bindValue(':desc',$desc);
+    $statement->bindValue(':stat',$stat);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
 ?>
