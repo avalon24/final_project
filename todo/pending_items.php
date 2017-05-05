@@ -13,9 +13,12 @@
 	        <td><i><?php echo $pending['t_date'];?></i></td>
 	        <td><i><?php echo $pending['t_time'];?></i></td>
 	        <td><i><?php echo $pending['t_desc'];?></i></td>
-		<td><form action="index.php" method="post">
-		    <input type="hidden" name="action" value="update_item">
+		<td><form action="upd_items.php" method="post">
+		    
 		        <input type="hidden" name="item_id" value="<?php echo $pending['t_id'] ?>" />
+			<input type="hidden" name="item_dt" value="<?php echo $pending['t_date'] ?>" />
+			<input type="hidden" name="item_tm" value="<?php echo $pending['t_time'] ?>" />
+			<input type="hidden" name="item_desc" value="<?php echo $pending['t_desc'] ?>" />
 			<input type="submit" value="Update">
 		    </form></td>
                 <td><form action="index.php" method="post">
