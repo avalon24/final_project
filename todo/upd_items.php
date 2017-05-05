@@ -30,10 +30,10 @@
 
         <h4>Fill in the data you wish to change - </h4>
         <label>New date: </label>
-        <input type="date" name="item_dt" value="<?php echo $pending['t_date'] ?>" /><br><br>
+        <input type="date" name="new_date" value="<?php echo $pending['t_date'] ?>" /><br><br>
 
         <label>New time: </label>
-        <input type="time" name="item_tm" value="<?php echo $pending['t_time'] ?>" /><br><br>
+        <input type="time" name="new_time" value="<?php echo $pending['t_time'] ?>" /><br><br>
 
         <label>&nbsp;</label>
         <input type="submit" value="Done"><br><br>
