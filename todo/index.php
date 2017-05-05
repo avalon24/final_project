@@ -9,10 +9,8 @@ require('../model/todo_function.php');
     } else if($action == "pwd_change") {
         include ('pwd_change.php');
     } else if($action == "pending_items") {
-        echo "current value of uid = "; echo $_COOKIE['user_id']; echo "###";
         $status="P";
 	$result=getTodoItems($_COOKIE['user_id'],$status);
-	echo $result[0]['t_date'];
 	include ('pending_items.php');
     } else if($action == "finished_items") {
         $status="C";
@@ -52,7 +50,6 @@ require('../model/todo_function.php');
     } else if($action == "delete_item") {
         $itemid=filter_input(INPUT_POST,'item_id');
 	$stat=filter_input(INPUT_POST,'pg_val');
-	echo "item id = $itemid";
 	delTodoItems($itemid);
 	$result=getTodoItems($_COOKIE['user_id'],$stat);
 	if($stat == "P") {
