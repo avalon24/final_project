@@ -31,6 +31,24 @@ require('../model/todo_function.php');
 	    $message="Please enter all values";
 	    include ('add_items.php');
 	}
+    } else if($action == "update_item") {
+        $itemid=filter_input(INPUT_POST,'item_id');
+	include ('update_items.php');
+    } else if($action == "delete_item") {
+        $itemid=filter_input(INPUT_POST,'item_id');
+	$stat=filter_input(INPUT_POST,'pg_val');
+	delTodoItems($itemid);
+	$result=getTodoItems($_COOKIE['user_id'],$stat);
+	if($stat == "P") {
+	    include ('pending_items.php');
+	} else {
+	    include ('finished_items.php');
+	}
+    } else if($action == "finish_item") {
+        $itemid=filter_input(INPUT_POST,'item_id');
+	finTodoItems($itemid);
+        $result=getTodoItems($_COOKIE['user_id'],"P");
+        include ('pending_items.php');
     }
 
 ?>
