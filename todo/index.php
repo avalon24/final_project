@@ -33,7 +33,22 @@ require('../model/todo_function.php');
 	}
     } else if($action == "update_item") {
         $itemid=filter_input(INPUT_POST,'item_id');
-	include ('update_items.php');
+	$old_date=filter_input(INPUT_POST,'old_date');
+	$old_time=filter_input(INPUT_POST,'old_time');
+	$new_date=filter_input(INPUT_POST,'new_date');
+	$new_time=filter_input(INPUT_POST,'new_time');
+	if($new_date == NULL) {
+            $new_date=$old_date;
+	}
+	if($new_time == NULL) {
+	    $new_time=$old_time;
+	}
+	updTodoItems($itemid,$new_date,$new_time);
+	$result=getTodoItems($_COOKIE['user_id'],"P");
+	include ('pending_items.php');
+    } else if($action == "cancel_upd") {
+        $result=getTodoItems($_COOKIE['user_id'],"P");
+        include ('pending_items.php');
     } else if($action == "delete_item") {
         $itemid=filter_input(INPUT_POST,'item_id');
 	$stat=filter_input(INPUT_POST,'pg_val');
