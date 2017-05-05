@@ -17,6 +17,10 @@
 	<?php }	?>
     </table>
 
+    <form action='add_items.php' method="post">
+        <input type="submit" value="Add New Task">
+    </form>
+
     <form action='home.php' method="post">
         <input type="submit" value="Go back">
     </form>
