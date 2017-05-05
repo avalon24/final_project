@@ -10,11 +10,13 @@ require('../model/todo_function.php');
         include ('pwd_change.php');
     } else if($action == "pending_items") {
         echo "current value of uid = "; echo $_COOKIE['user_id']; echo "###";
-        $result=getTodoItems($_COOKIE['user_id'],"P");
+        $status="P";
+	$result=getTodoItems($_COOKIE['user_id'],$status);
 	echo $result[0]['t_date'];
 	include ('pending_items.php');
     } else if($action == "finished_items") {
-        $result=getTodoItems($_COOKIE['user_id'],"C");
+        $status="C";
+	$result=getTodoItems($_COOKIE['user_id'],$status);
 	include ('finished_items.php');
     }
 
