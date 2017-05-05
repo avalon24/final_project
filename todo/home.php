@@ -1,8 +1,30 @@
 <?php include '../view/fp_header.php'; ?>
 <main>
-    <h4>Welcome...<?php echo $_COOKIE['login'] ?></h4>
-    <a href="#List of incomplete items">List of incomplete items</a><br>
-    <a href="#List of complete items">List of complete items</a><br><br>
+    <h4>Welcome...<?php echo $_COOKIE['login'] ?></h4><br><br>
+
+    <form action="index.php" method="post" name="upd_prof_form">
+    <input type="hidden" name="action" value="upd_profile" >
+        <label><i># Update your profile data</i></label>
+	<input type=submit value="Go">
+    </form><br><br>
+
+    <form action="index.php" method="post" name="pwd_chng_form">
+    <input type="hidden" name="action" value="pwd_change" >
+        <label><i># Change Password</i></label>
+	<input type="submit" value="Go">
+    </form><br><br>
+
+    <form action="index.php" method="post" name="pending_form">
+    <input type="hidden" name="action" value="pending_items">
+        <label><i># List of pending items</i></label>
+	<input type="submit" value="Go">
+    </form><br><br>
+
+    <form action="index.php" method="post" name="finished_form">
+    <input type="hidden" name="action" value="finished_items" >
+        <label><i># List of finished items</i></label>
+	<input type="submit" value="Go">
+    </form><br><br><br><br>
 
     <form action="../index.php" method="post" name="logout_form">
     <input type="hidden" name="action" value="user_logout">
