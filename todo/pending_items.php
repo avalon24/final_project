@@ -15,18 +15,18 @@
 	        <td><i><?php echo $pending['t_desc'];?></i></td>
 		<td><form action="index.php" method="post">
 		    <input type="hidden" name="action" value="update_item">
-		        <input type="hidden" name="item_id" value=<?php $pending['t_id'] ?> />
+		        <input type="hidden" name="item_id" value="<?php echo $pending['t_id'] ?>" />
 			<input type="submit" value="Update">
 		    </form></td>
                 <td><form action="index.php" method="post">
 		    <input type="hidden" name="action" value="delete_item">
-                        <input type="hidden" name="item_id" value=<?php $pending['t_id'] ?> />
+		        <input type="hidden" name="item_id" value="<?php echo $pending['t_id'] ?>" />
                         <input type="hidden" name="pg_val" value="P" />
                         <input type="submit" value="Delete">
 		    </form></td>
                 <td><form action="index.php" method="post">
                     <input type="hidden" name="action" value="finish_item">
-                        <input type="hidden" name="item_id" value=<?php $pending['t_id'] ?> />
+                        <input type="hidden" name="item_id" value="<?php echo $pending['t_id'] ?>" />
                         <input type="submit" value="Finish">
                     </form></td>
 
