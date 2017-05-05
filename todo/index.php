@@ -24,8 +24,8 @@ require('../model/todo_function.php');
 	$desc=filter_input(INPUT_POST,'item_desc');
 	$stat="P";
 	if($date != NULL && $time!= NULL && $desc != NULL) {
-	    addTodoItems($date,$time,$desc,$stat);
-	    include ('pending_items.php');
+	    addTodoItems($_COOKIE['login'],$date,$time,$desc,$stat);
+	    header ("Location: ./pending_items.php");
 	} else {
 	    $message="Please enter all values";
 	    include ('add_items.php');
