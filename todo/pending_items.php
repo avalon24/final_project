@@ -7,13 +7,29 @@
             <td><b>Due Date<b></td>
             <td><b>Due Time<b></td>
 	    <td><b>Pending Task<b></td>
-	</b></tr>
+	</tr>
 	<?php foreach($result as $pending) { ?>
 	    <tr>
 	        <td><i><?php echo $pending['t_date'];?></i></td>
 	        <td><i><?php echo $pending['t_time'];?></i></td>
 	        <td><i><?php echo $pending['t_desc'];?></i></td>
-	    </i></tr>
+		<td><form action="index.php" method="post">
+		    <input type="hidden" name="action" value="update_item">
+		        <label>&nbsp;</label>
+			<input type="submit" value="Update">
+		    </form></td>
+                <td><form action="index.php" method="post">
+		    <input type="hidden" name="action" value="delete_item">
+		        <label>&nbsp;</label>
+		        <input type="submit" value="Delete">
+		    </form></td>
+                <td><form action="index.php" method="post">
+                    <input type="hidden" name="action" value="finish_item">
+                        <label>&nbsp;</label>
+                        <input type="submit" value="Finish">
+                    </form></td>
+
+	    </tr>
 	<?php }	?>
     </table>
 
