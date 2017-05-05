@@ -1,6 +1,6 @@
 <?php
 
-function getPendingItems($user_id,$status) {
+function getTodoItems($user_id,$status) {
     global $db;
     $query='select * from fp_todo_list
             where t_u_id = :user_id and
