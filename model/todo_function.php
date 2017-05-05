@@ -51,4 +51,17 @@ function finTodoItems($itemid) {
     $statement->closeCursor();
 }
 
+function updTodoItems($itemid,$new_date,$new_time) {
+    global $db;
+    $query='update fp_todo_list
+               set t_date = :new_date, t_time = :new_time
+             where t_id = :itemid';
+    $statement=$db->prepare($query);
+    $statement->bindValue(':new_date',$new_date);
+    $statement->bindValue(':new_time',$new_time);
+    $statement->bindValue(':itemid',$itemid);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
 ?>
