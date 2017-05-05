@@ -1,24 +1,20 @@
 <?php include '../view/fp_header.php' ?>
 <main>
-    <h4>Welcome...<?php echo $_COOKIE['login'] ?></h4>
+    <h4>Hello <?php echo $_COOKIE['login'] ?>, please find below the list of your pending items:</h4>
 
     <table id = 'display'>
-        <tr><b>
-            <td>Due Date</td>
-	    <td>Due Time</td>
-	    <td>Pending Task</td>
+        <tr>
+            <td><b>Due Date<b></td>
+            <td><b>Due Time<b></td>
+	    <td><b>Pending Task<b></td>
 	</b></tr>
-	<?php
-	    foreach($results as $pending){
-	?>
-	    <tr><i>
-	        <td><?php echo $pending['t_date'];?></td>
-	        <td><?php echo $pending['t_time'];?></td>
-	        <td><?php echo $pending['t_desc'];?></td>
+	<?php foreach($result as $pending) { ?>
+	    <tr>
+	        <td><i><?php echo $pending['t_date'];?></i></td>
+	        <td><i><?php echo $pending['t_time'];?></i></td>
+	        <td><i><?php echo $pending['t_desc'];?></i></td>
 	    </i></tr>
-	<?php
-	    }
-	?>
+	<?php }	?>
     </table>
 
     <form action='home.php' method="post">
