@@ -32,11 +32,11 @@ require('../model/todo_function.php');
 	    include ('add_items.php');
 	}
     } else if($action == "update_item") {
-        $itemid=filter_input(INPUT_POST,'item_id');
-	$old_date=filter_input(INPUT_POST,'old_date');
-	$old_time=filter_input(INPUT_POST,'old_time');
-	$new_date=filter_input(INPUT_POST,'new_date');
-	$new_time=filter_input(INPUT_POST,'new_time');
+        $itemid=filter_input(INPUT_POST,'item_id'); 
+	$old_date=filter_input(INPUT_POST,'old_date'); 
+	$old_time=filter_input(INPUT_POST,'old_time'); 
+	$new_date=filter_input(INPUT_POST,'new_date'); 
+	$new_time=filter_input(INPUT_POST,'new_time'); 
 	if($new_date == NULL) {
             $new_date=$old_date;
 	}
