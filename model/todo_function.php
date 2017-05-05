@@ -28,6 +28,16 @@ function addTodoItems($user,$date,$time,$desc,$stat) {
     $statement->closeCursor();
 }
 
+function delTodoItems($itemid) {
+    global $db;
+    $query='delete from fp_todo_list
+             where t_id = :itemid';
+    $statement=$db->prepare($query);
+    $statement->bindValue(':itemid',$itemid);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
 function finTodoItems($itemid) {
     global $db;
     $query='update fp_todo_list
@@ -35,7 +45,6 @@ function finTodoItems($itemid) {
 	     where t_id = :itemid';
     $statement=$db->prepare($query);
     $statement->bindValue(':stat',"C");
-    echo "item id = $itemid";
     $statement->bindValue(':itemid',$itemid);
     $statement->execute();
     $statement->closeCursor();
