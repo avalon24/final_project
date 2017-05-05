@@ -18,6 +18,18 @@ require('../model/todo_function.php');
         $status="C";
 	$result=getTodoItems($_COOKIE['user_id'],$status);
 	include ('finished_items.php');
+    } else if($action == "add_items") {
+        $date=filter_input(INPUT_POST,'due_dt');
+	$time=filter_input(INPUT_POST,'due_tm');
+	$desc=filter_input(INPUT_POST,'item_desc');
+	$stat="P";
+	if($date != NULL && $time!= NULL && $desc != NULL) {
+	    addTodoItems($date,$time,$desc,$stat);
+	    include ('pending_items.php');
+	} else {
+	    $message="Please enter all values";
+	    include ('add_items.php');
+	}
     }
 
 ?>
