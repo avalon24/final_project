@@ -37,6 +37,7 @@ require('../model/todo_function.php');
     } else if($action == "delete_item") {
         $itemid=filter_input(INPUT_POST,'item_id');
 	$stat=filter_input(INPUT_POST,'pg_val');
+	echo "item id = $itemid";
 	delTodoItems($itemid);
 	$result=getTodoItems($_COOKIE['user_id'],$stat);
 	if($stat == "P") {
