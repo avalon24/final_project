@@ -73,7 +73,7 @@ require('../final_project/model/db_function.php');
 	$reseta=filter_input(INPUT_POST,'reseta');
 	if($password === $passtemp) {
 	    if($reseta != NULL && $password != NULL) {
-	        $result=updPassword($userid,$password);
+	        $result=updPassword($userid,$password,$reseta);
 		if($result == true) {
 		    $success="Password changed! Try login now!";
 		    include ('login.php');
