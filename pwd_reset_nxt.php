@@ -7,7 +7,8 @@
     <input type=hidden name="action" value="pwd_reset">
         
 	<input type="hidden" name="userid" value="<?php echo $result[0]['userid']; ?>" />
-        
+        <input type="hidden" name="uname"  value="<?php echo $result[0]['uname'];  ?>" />
+
 	<label>Question: <?php echo $result[0]['resetq']; ?></label><br><br>
 
         <label>Answer: </label>
