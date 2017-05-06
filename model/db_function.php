@@ -85,4 +85,23 @@ function isUserValid($uname,$password) {
     }
 }
 
+function updPassword($userid,$password) {
+    global $db;
+    $query='update fp_users
+               set u_password = :password
+	     where u_id = :userid';
+    $statement=$db->prepare();
+    $statement->bindValue(':userid',$userid);
+    $statement->bindValue(':password',$password);
+    $statement->execute();
+    $statement->closeCursor();
+
+    $count=$statement->rowCount();
+    if($count == 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 ?>
