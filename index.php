@@ -60,5 +60,9 @@ require('../final_project/model/db_function.php');
 	    $message="Passwords do not match!!";
 	    include ('register.php');
 	}
+    } else if($action == 'get_ques') {
+        $uname=filter_input(INPUT_POST,'user_name');
+	$result=getQuestion($uname);
+	include ('pwd_reset_nxt.php');
     }
 ?>
