@@ -3,8 +3,11 @@
 function userCreate($fname,$lname,$phone,$dob,$gender,$uname,$password,$resetq,$reseta) {
     global $db;
     echo "inside DB Function";
-    $chk_count=checkUser($uname);
-    if($chk_count == 0) {
+    $chk_data=checkUser($uname);
+    echo $chk_data[0]['u_email'];
+    if($chk_data[0]['u_email'] == NULL) {
+/*    $chk_count=checkUser($uname);
+    if($chk_count == 0) { */
         $query = 'insert into fp_users(u_fname,u_lname,u_phone,u_dob,u_gender,u_email,u_password,u_secretq,u_secreta) 
                        values (:fname,:lname,:phone,:dob,:gender,:uname,:password,:resetq,:reseta)';
         $statement=$db->prepare($query);
@@ -20,7 +23,7 @@ function userCreate($fname,$lname,$phone,$dob,$gender,$uname,$password,$resetq,$
         $count=$statement->execute();
         $statement->closeCursor();
         echo "updated = $count";
-        if($count == 1) {
+	if($count == 1) {
             return false;
         } else {
             return true;
@@ -38,9 +41,11 @@ function checkUser($uname) {
     $statement=$db->prepare($query);
     $statement->bindValue(':uname',$uname);
     $statement->execute();
+/*    $chk_count=$statement->rowCount();
+    return $chk_count;*/
+    $chk_data=$statement->fetchAll();
     $statement->closeCursor();
-    $chk_count=$statement->rowCount();
-    return $chk_count;
+    return $chk_data;
 }
 
 function isUserValid($uname,$password) {
