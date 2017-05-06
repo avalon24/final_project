@@ -1,6 +1,6 @@
 <?php include '../view/fp_header.php'; ?>
 <main>
-    <h4>Welcome...<?php echo $_COOKIE['login'] ?></h4><br><br>
+    <h4>Welcome...<?php echo $_COOKIE['login']; echo $success; ?></h4><br><br>
 
     <form action="index.php" method="post" name="upd_prof_form">
     <input type="hidden" name="action" value="upd_profile" >
@@ -8,7 +8,7 @@
 	<input type=submit value="Go">
     </form><br><br>
 
-    <form action="index.php" method="post" name="pwd_chng_form">
+    <form action="change_pwd.php" method="post" name="pwd_chng_form">
     <input type="hidden" name="action" value="pwd_change" >
         <label><i># Change Password</i></label>
 	<input type="submit" value="Go">
