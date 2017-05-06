@@ -19,7 +19,7 @@
 	<br><br>
     </form>
 
-    <a href="register.php">New user</a>  |  <a href="reset_pwd.php">Forgot Password</a>
+    <a href="register.php">New user</a>  |  <a href="pwd_reset.php">Forgot Password</a>
     
 </main>
 <?php include 'view/fp_footer.php'; ?>
