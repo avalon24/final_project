@@ -43,6 +43,23 @@ function checkUser($uname) {
     return $chk_count;
 }
 
+function getQuestion($uname) {
+    global $db;
+    echo "uname = $uname @ ";
+    $query = 'select u.u_id userid, sq.sq_desc resetq
+	      from fp_users u, secret_ques sq
+	      where u.u_email = :uname and
+	            u.u_secretq = sq.sq_id';	
+    $statement=$db->prepare($query);
+    $statement->bindValue(':uname',$uname);
+    $statement->execute();
+    $result=$statement->fetchAll();
+    $count=$statement->rowCount();
+    echo "count = $count @ ";
+    $statement->closeCursor();
+    return $result;
+}
+
 function isUserValid($uname,$password) {
     global $db;
     echo "uname = $uname # pwd = $password";
