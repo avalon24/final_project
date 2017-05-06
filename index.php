@@ -63,6 +63,7 @@ require('../final_project/model/db_function.php');
     } else if($action == 'get_ques') {
         $uname=filter_input(INPUT_POST,'user_name');
 	$result=getQuestion($uname);
+	echo "result has "; echo $result[0]['userid'];
 	include ('pwd_reset_nxt.php');
     }
 ?>
