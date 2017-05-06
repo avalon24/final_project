@@ -85,14 +85,16 @@ function isUserValid($uname,$password) {
     }
 }
 
-function updPassword($userid,$password) {
+function updPassword($userid,$password,$reseta) {
     global $db;
     $query='update fp_users
                set u_password = :password
-	     where u_id = :userid';
-    $statement=$db->prepare();
+	     where u_id = :userid and
+	           u_secreta = :reseta';
+    $statement=$db->prepare($query);
     $statement->bindValue(':userid',$userid);
     $statement->bindValue(':password',$password);
+    $statement->bindValue(':reseta',$reseta);
     $statement->execute();
     $statement->closeCursor();
 
