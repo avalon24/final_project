@@ -65,5 +65,28 @@ require('../final_project/model/db_function.php');
 	$result=getQuestion($uname);
 	echo "result has "; echo $result[0]['userid'];
 	include ('pwd_reset_nxt.php');
+    } else if($action == 'pwd_reset') {
+        $userid=filter_input(INPUT_POST,'userid');
+	$password=filter_input(INPUT_POST,'password');
+	$passtemp=filter_input(INPUT_POST,'pass_temp');
+	$reseta=filter_input(INPUT_POST,'reseta');
+	if($password === $passtemp) {
+	    if($reseta != NULL && $password != NULL) {
+	        $result=updPassword($userid,$password);
+		if($result == true) {
+		    $success="Password changed! Try login now!";
+		    include ('login.php');
+		} else {
+		    $message="Sorry could not change your password! Please try again or contact admin if issue persists!";
+		    include ('pwd_reset_nxt.php');
+	        }
+	    } else {
+	        $message="All fields must be populated!";
+		include ('pwd_reset_nxt.php');
+            }
+        } else {
+	    $message="Passwords do not match!!";
+	    include ('pwd_reset_nxt.php');
+	}
     }
 ?>
