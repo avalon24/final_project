@@ -79,7 +79,7 @@ function isUserValid($uname,$password) {
 	setcookie('login',$user);
 	/*$_COOKIE['login'] = $user;*/
 	setcookie('user_id',$result[0]['u_id']);
-	setcookie('secret_ans',$result[0]['u_secreta'];
+	setcookie('secret_ans',$result[0]['u_secreta']);
         return $result;
     } else {
         return false;
