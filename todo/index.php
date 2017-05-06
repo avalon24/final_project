@@ -62,6 +62,28 @@ require('../model/todo_function.php');
 	finTodoItems($itemid);
         $result=getTodoItems($_COOKIE['user_id'],"P");
         include ('pending_items.php');
+    } else if($action == "change_pwd") {
+        $userid=$_COOKIE['user_id'];
+        $password=filter_input(INPUT_POST,'password');
+        $passtemp=filter_input(INPUT_POST,'pass_temp');
+        $reseta=filter_input(INPUT_POST,'reseta');
+        if($password === $passtemp) {
+            if($password != NULL) {
+                $result=updPassword($userid,$password,$reseta);
+	        if($result == true) {
+	            $success=", password changed successfully!";
+		    include ('home.php');
+		} else {
+		    $message="Failed to update password!";
+		    include ('change_pwd.php');
+		}
+	    } else {
+	        $message="Password cannot be blank!";
+		include ('change_pwd.php');
+	    }
+	} else {
+	    $message="Passwords do not match! Reenter please!";
+	    include ('change_pwd.php');
+	}
     }
-
 ?>
