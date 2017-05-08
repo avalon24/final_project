@@ -2,7 +2,7 @@
 <main>
 <div class="tab">
     <h1>&nbsp;&nbsp;&nbsp;&nbspForgot password!!</h1>
-    <h3><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message ?></i></h3>
+    <h3><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message ?></i></h3>
     <h4><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please enter your details below:</i></h4>
     <form action="index.php" method="post" align="center">
     <input type=hidden name="action" value="get_ques">
