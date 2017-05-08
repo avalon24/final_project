@@ -1,8 +1,9 @@
 <?php include '../view/fp_header.php' ?>
 <main>
-    <h4>Hello <?php echo $_COOKIE['login'] ?>, please find below the list of your finished items:</h4>
+<div class="tab">
+    <h4><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello <?php echo $_COOKIE['login'] ?>, please find below the list of your finished items:</i></h4>
 
-        <table id = 'display'>
+        <table id = 'display' align="center">
         <tr>
             <td><b>Due Date<b></td>
             <td><b>Due Time<b></td>
@@ -22,12 +23,12 @@
 
 	</tr>
 	<?php } ?>
-	</table><br><br>
+	</table><br>
 	
-	<form action='home.php' method="post">
+	<form action='home.php' method="post" align="center">
 	    <input type="submit" value="Go back">
-	</form><br>
-	
+	</form><br><br>
+</div>	
 </main>
 <?php include '../view/fp_footer.php' ?>
 
