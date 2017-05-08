@@ -34,5 +34,10 @@
         <input type="submit" value="submit">
     </form><br><br>
 
+    <form action="index.php" method="post">
+    <input type="hidden" name="action" value="cancel_upd_prof">
+        <input type="submit" value="Cancel Update">
+    </form><br><br>
+
 </main>
 <?php include '../view/fp_footer.php'; ?>
