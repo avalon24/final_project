@@ -4,7 +4,7 @@ require('../model/db_function.php');
 require('../model/todo_function.php');
 
     $action=filter_input(INPUT_POST,'action');
-echo "action = $action"; echo $_COOKIE['fname']; echo $_COOKIE['lname']; echo $_COOKIE['phone']; echo $_COOKIE['dob']; echo $_COOKIE['gender']; 
+//echo "action = $action"; echo $_COOKIE['fname']; echo $_COOKIE['lname']; echo $_COOKIE['phone']; echo $_COOKIE['dob']; echo $_COOKIE['gender']; 
 
     if($action == "upd_profile") {
         include ('upd_profile.php');
@@ -88,13 +88,12 @@ echo "action = $action"; echo $_COOKIE['fname']; echo $_COOKIE['lname']; echo $_
 	    include ('change_pwd.php');
 	}
     } else if($action == "updProfile") {
-        echo "now where";
-	$new_fname=filter_input(INPUT_POST,'f_name');
+        $new_fname=filter_input(INPUT_POST,'f_name');
 	$new_lname=filter_input(INPUT_POST,'l_name');
 	$new_phone=filter_input(INPUT_POST,'contact');
 	$new_dob=filter_input(INPUT_POST,'dob');
 	$new_gender=filter_input(INPUT_POST,'gender');
-	echo "fname=$new_name lname=$new_lname $phone=$new_phone";
+	//echo "fname=$new_name lname=$new_lname $phone=$new_phone";
         if($new_fname==NULL && $new_lname==NULL && $new_phone==NULL && $new_dob==NULL && $new_gender==NULL) {
             $message="It did not work";
             header ("Location: home.php");
