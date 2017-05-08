@@ -80,11 +80,11 @@ function isUserValid($uname,$password) {
 	/*$_COOKIE['login'] = $user;*/
 	setcookie('user_id',$result[0]['u_id']);
 	setcookie('secret_ans',$result[0]['u_secreta']);
-	setcookie('fname',$result[0]['u_fname'];
-        setcookie('lname',$result[0]['u_lname'];
-	setcookie('phone',$result[0]['u_phone'];
-	setcookie('dob',$result[0]['u_dob'];
-	setcookie('gender',$result[0]['u_gender'];
+	setcookie('fname',$result[0]['u_fname']);
+        setcookie('lname',$result[0]['u_lname']);
+	setcookie('phone',$result[0]['u_phone']);
+	setcookie('dob',$result[0]['u_dob']);
+	setcookie('gender',$result[0]['u_gender']);
 	return $result;
     } else {
         return false;
