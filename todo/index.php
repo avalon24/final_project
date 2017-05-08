@@ -85,5 +85,21 @@ require('../model/todo_function.php');
 	    $message="Passwords do not match! Reenter please!";
 	    include ('change_pwd.php');
 	}
-    }
+    } /*else if($action == "upd_profile") {
+        $userid=filter_input(INPUT_POST,$_COOKIE['user_id']);
+	$old_fname=filter_input(INPUT_POST,$_COOKIE['fname']);
+	$old_lname=filter_input(INPUT_POST,$_COOKIE['lname']);
+	$old_phone=filter_input(INPUT_POST,$_COOKIE['phone']);
+	$new_dob=filter_input(INPUT_POST,'new_date');
+	$new_gender=filter_input(INPUT_POST,'new_time');
+	if($new_date == NULL) {
+	    $new_date=$old_date;
+	}
+	if($new_time == NULL) {
+	    $new_time=$old_time;
+	}
+	updTodoItems($itemid,$new_date,$new_time);
+	$result=getTodoItems($_COOKIE['user_id'],"P");
+	include ('pending_items.php');
+    }*/
 ?>
