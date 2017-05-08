@@ -1,9 +1,10 @@
 <?php include 'view/fp_header.php'; ?>
 <main>
-    <h1>Login Page!!</h1>
+<div class="tab">
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;Login Page!!</h1>
     <h3><?php echo $message ?></h3>
     <h4><?php echo $success ?></h4>
-    <form action="index.php" method="post" id="login_form">
+    <form action="index.php" method="post" id="login_form" align="right">
         <input type=hidden name="action" value="user_login">
 
 	<label>User ID: </label>
@@ -19,7 +20,7 @@
 	<br><br>
     </form>
 
-    <a href="register.php">New user</a>  |  <a href="pwd_reset.php">Forgot Password</a>
-    
+    <center><a href="register.php">New user</a>  |  <a href="pwd_reset.php">Forgot Password</a><br><br></center>
+</div>    
 </main>
 <?php include 'view/fp_footer.php'; ?>
