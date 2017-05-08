@@ -2,7 +2,7 @@
 <main>
     <h4>Welcome...<?php echo $_COOKIE['login']; echo $success; ?></h4><br><br>
 
-    <form action="index.php" method="post" name="upd_prof_form">
+    <form action="upd_profile.php" method="post" name="upd_prof_form">
     <input type="hidden" name="action" value="upd_profile" >
         <label><i># Update your profile data</i></label>
 	<input type=submit value="Go">
