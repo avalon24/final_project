@@ -85,21 +85,38 @@ require('../model/todo_function.php');
 	    $message="Passwords do not match! Reenter please!";
 	    include ('change_pwd.php');
 	}
-    } /*else if($action == "upd_profile") {
-        $userid=filter_input(INPUT_POST,$_COOKIE['user_id']);
-	$old_fname=filter_input(INPUT_POST,$_COOKIE['fname']);
-	$old_lname=filter_input(INPUT_POST,$_COOKIE['lname']);
-	$old_phone=filter_input(INPUT_POST,$_COOKIE['phone']);
-	$new_dob=filter_input(INPUT_POST,'new_date');
-	$new_gender=filter_input(INPUT_POST,'new_time');
-	if($new_date == NULL) {
-	    $new_date=$old_date;
-	}
-	if($new_time == NULL) {
-	    $new_time=$old_time;
-	}
-	updTodoItems($itemid,$new_date,$new_time);
-	$result=getTodoItems($_COOKIE['user_id'],"P");
-	include ('pending_items.php');
-    }*/
+    } else if($action == "upd_profile") {
+//        $userid=filter_input(INPUT_POST,$_COOKIE['user_id']);
+        
+	$new_fname=filter_input(INPUT_POST,'f_name');
+	$new_lname=filter_input(INPUT_POST,'l_name');
+	$new_phone=filter_input(INPUT_POST,'contact');
+	$new_dob=filter_input(INPUT_POST,'dob');
+	$new_gender=filter_input(INPUT_POST,'gender');
+	echo "fname=$new_name lname=$new_lname $phone=$new_phone";
+        if($new_fname!=NULL && $new_lname!=NULL && $new_phone!=NULL && $new_dob!=NULL && $new_gender!=NULL) {
+	    if($new_fname == NULL) {
+	        $new_fname=$_COOKIE['fname'];
+	    }
+	    if($new_lname == NULL) {
+	        $new_lname=$_COOKIE['lname'];
+	    }
+	    if($new_phone == NULL) {
+                $new_phone=$_COOKIE['phone'];
+            }
+            if($new_dob == NULL) {
+                $new_dob=$_COOKIE['dob'];
+            }
+	    if($new_gender == NULL) {
+                $new_gender=$_COOKIE['gender'];
+            }
+
+	    updProfile($new_fname,$new_lname,$new_contact,$new_dob,$new_gender);
+//	    $result=getTodoItems($_COOKIE['user_id'],"P");
+	    include ('home.php');
+	} else {
+	    $message="It did not work";
+	    include ('home.php');
+        }
+    }
 ?>
