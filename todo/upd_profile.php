@@ -1,10 +1,7 @@
-<?php include '../view/fp_header.php';
-
-?>
+<?php include '../view/fp_header.php';?>
 
 <main>
     <h3><?php echo $message ?></h3>
-    <?php echo "gender = "; echo $_COOKIE['gender']; echo "id = "; echo $_COOKIE['user_id'];?>
 
     <h4>Hi <?php echo $_COOKIE['login'] ?>, please update the values you wish to change - </h4>
     <form action="index.php" method="post" id="upd_prof_form">
