@@ -30,9 +30,9 @@
     	<form action="../index.php" method="post" name="logout_form">
     	<input type="hidden" name="action" value="user_logout">
 	     <button class="tablinks">Logout</button>
-    	</form><br><br>
+    	</form><br>
+        <h4><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome...<?php echo $_COOKIE['login']; echo $success; ?></i></h4>
     </div>
-    <h4><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome...<?php echo $_COOKIE['login']; echo $success; ?></i></h4>
 
         <div class="body">
 	     <p><i>This is your personal calendar!<br /><br />
@@ -44,10 +44,10 @@
 		   completely removing - that too can be provided for you in the near future.<br /><br />
 
                    We hope that you will have a smooth sailing while navigating through our
-		   product!<br><br><br>
+		   product!<br><br>
 
 		   Regards,<br>
-		   Site Manager.<br /><br /><br />
+		   Site Manager.<br /><br />
 	     </i></p>
 	 </div>
 </main>
