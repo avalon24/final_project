@@ -64,4 +64,26 @@ function updTodoItems($itemid,$new_date,$new_time) {
     $statement->closeCursor();
 }
 
+function updProfile($fname,$lname,$phone,$dob,$gender) {
+    global $db;
+    $query='update fp_users
+               set u_fname = :fname, u_lname = :lname, u_phone = :phone, u_dob = :dob, u_gender = :gender
+             where u_id = :userid';
+    $statement=$db->prepare($query);
+    $statement->bindValue(':userid',$_COOKIE['user_id']);
+    $statement->bindValue(':fname',$fname);
+    $statement->bindValue(':lname',$lname);
+    $statement->bindValue(':phone',$phone);
+    $statement->bindValue(':dob',$dob);
+    $statement->bindValue(':gender',$gender);
+    $statement->execute();
+    $statement->closeCursor();
+    $count=$statement->rowCount();
+    echo "update count = $count";
+    if($count == 1) {
+        setcookie('login',$fname." ".$lname);
+    }
+}
+
+
 ?>
