@@ -79,10 +79,10 @@ function updProfile($fname,$lname,$phone,$dob,$gender) {
     $statement->execute();
     $statement->closeCursor();
     $count=$statement->rowCount();
+    $uname=$fname." ".$lname;
+    setcookie('login',false);
+    setcookie('login',$uname);
     echo "update count = $count";
-    if($count == 1) {
-        setcookie('login',$fname." ".$lname);
-    }
 }
 
 
