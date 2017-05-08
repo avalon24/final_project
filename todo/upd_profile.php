@@ -4,13 +4,13 @@
 
 <main>
     <h3><?php echo $message ?></h3>
-    <?php echo "gender = "; echo $_COOKIE['gender']; ?>
+    <?php echo "gender = "; echo $_COOKIE['gender']; echo "id = "; echo $_COOKIE['user_id'];?>
 
     <h4>Hi <?php echo $_COOKIE['login'] ?>, please update the values you wish to change - </h4>
     <form action="index.php" method="post" id="upd_prof_form">
-        <input type="hidden" name="action" value="upd_profile">
+        <input type="hidden" name="action" value="updProfile">
 
-	<label>First Name: </label>
+	<label>Given Name: </label>
 	<input type="text" name="f_name" placeholder="<?php echo $_COOKIE['fname'] ?>" /><br>
 
         <label>Last Name: </label>
