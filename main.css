@@ -118,14 +118,7 @@ td, th {
     padding: .2em .5em .2em .5em;
     text-align: left;
 }
-form label {
-    width: 10em;
-    padding-right: 6em;
-    padding-bottom: .5em;
-    float: left;
 
-
-}
 /* the styles for classes */
 .right {
     text-align: right;
