@@ -82,7 +82,16 @@ function updProfile($fname,$lname,$phone,$dob,$gender) {
     $uname=$fname." ".$lname;
     setcookie('login',false);
     setcookie('login',$uname);
-    echo "update count = $count";
+    setcookie('fname',false);
+        setcookie('fname',$fname);
+    setcookie('lname',false);
+        setcookie('lname',$lname);
+    setcookie('phone',false);
+        setcookie('phone',$phone);
+    setcookie('dob',false);
+        setcookie('dob',$dob);
+    setcookie('gender',false);
+        setcookie('gender',$gender);
 }
 
 
