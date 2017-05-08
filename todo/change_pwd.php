@@ -1,4 +1,4 @@
-<?php include 'view/fp_header.php'; ?>
+<?php include '../view/fp_header.php'; ?>
 <main>
     <h1>Change password!!</h1>
     <h3><?php echo $message; ?></h3>
@@ -20,4 +20,4 @@
     
     </form>
 </main>
-<?php include 'view/fp_footer.php'; ?>
+<?php include '../view/fp_footer.php'; ?>
