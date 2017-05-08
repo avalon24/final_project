@@ -1,8 +1,8 @@
 <?php include '../view/fp_header.php'; ?>
 <main>
     <h1>Change password!!</h1>
-    <h3><?php echo $message; ?></h3>
-    <h4>Hi <?php echo $_COOKIE['login'] ?>, please update: </h4>    
+    <h3><i><?php echo $message; ?></i></h3>
+    <h4><i>Hi <?php echo $_COOKIE['login'] ?>, please update:</i></h4>    
     <form action="index.php" method="post" id="reset_form">
     <input type=hidden name="action" value="change_pwd">
         
@@ -19,5 +19,11 @@
 	<input type="submit" value="Submit" /><br><br>
     
     </form>
+
+    <form action='home.php' method="post" id="reset_form">
+       	<label>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="submit" value="Go back"><br><br><br>
+    </form>
+
 </main>
 <?php include '../view/fp_footer.php'; ?>
