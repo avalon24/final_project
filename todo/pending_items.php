@@ -39,11 +39,11 @@
 
     <form action='add_items.php' method="post">
         <input type="submit" value="Add New Task">
-    </form>
+    </form><br>
 
     <form action='home.php' method="post">
         <input type="submit" value="Go back">
-    </form>
+    </form><br><br>
 
 </main>
 <?php include '../view/fp_footer.php' ?>
