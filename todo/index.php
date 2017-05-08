@@ -97,7 +97,7 @@ echo "action = $action"; echo $_COOKIE['fname']; echo $_COOKIE['lname']; echo $_
 	echo "fname=$new_name lname=$new_lname $phone=$new_phone";
         if($new_fname==NULL && $new_lname==NULL && $new_phone==NULL && $new_dob==NULL && $new_gender==NULL) {
             $message="It did not work";
-            include ('./home.php');
+            header ("Location: home.php");
         } else {
 	    if($new_fname == NULL) {
 	        $new_fname=$_COOKIE['fname'];
@@ -115,7 +115,9 @@ echo "action = $action"; echo $_COOKIE['fname']; echo $_COOKIE['lname']; echo $_
                 $new_gender=$_COOKIE['gender'];
             }
 	    updProfile($new_fname,$new_lname,$new_phone,$new_dob,$new_gender);
-	    include ('./home.php');
+	    header ("Location: home.php");
 	} 
+    } else if($action == "cancel_upd_prof") {
+        include ('home.php');
     }
 ?>
