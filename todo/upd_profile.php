@@ -7,13 +7,13 @@
         <input type="hidden" name="action" value="upd_profile">
 
 	<label>First Name: </label>
-	<input type="text" name="f_name" placeholder="<?php echo "$fname" ?>" /><br>
+	<input type="text" name="f_name" placeholder="<?php echo $_COOKIE['fname'] ?>" /><br>
 
         <label>Last Name: </label>
-        <input type="text" name="l_name" placeholder="<?php echo "$lname" ?>" /><br><br>
+        <input type="text" name="l_name" placeholder="<?php echo $_COOKIE['lname'] ?>" /><br><br>
 
         <label>Phone No: </label>
-        <input type="text" name="contact" placeholder="<?php echo "$phone" ?>" ><br><br>
+        <input type="text" name="contact" placeholder="<?php echo $_COOKIE['phone'] ?>" ><br><br>
 
         <label>Date of Birth: </label>
         <input type="date" name="dob" <?php echo "$dob" ?> /><br>
