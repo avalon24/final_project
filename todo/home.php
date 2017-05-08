@@ -37,7 +37,8 @@
         <div class="body">
 	     <p><i>This is your personal calendar!<br /><br />
 
-                   We have various options available for you, as you can see above! At any point of time you may choose to track the tasks that are pending for you and ones that are completed. <br><br>
+                   We have various options available for you, as you can see above! At any point of time you may choose to track the tasks 
+		   that are pending for you and ones that are completed. <br><br>
 
 		   As of now, we allow you to remove tasks that you deem irrelevant. However, if you ever choose to archive them instead of
 		   completely removing - that too can be provided for you in the near future.<br /><br />
