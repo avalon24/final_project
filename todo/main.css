@@ -172,4 +172,6 @@ form label {
 #register_form input {
     float: left;
 }
-
+#reset_form input {
+    float: left;
+}
