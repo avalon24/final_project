@@ -87,13 +87,18 @@ div.tab button.active {
     background-color: #ccc;
 }
 /* Adding new division for content*/
-div.body {
+div.reg {
     overflow: hidden;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
-    background-color: #f1f1f1;
-    padding: 0 12em;
-    justify-content: space-around;
+    background-color: rgb(241, 241, 241); // #f1f1f1;
+}
+
+div.reg label {
+    width: 10em;
+    padding-right: 10em;
+    padding-bottom: .5em;
+    float: left;
 }
 li {
     padding-bottom: 0.5em;
@@ -154,9 +159,9 @@ td, th {
     padding-bottom: .5em;
     float: left;
 }
-#register_form label {
+#reg_form label {
     width: 10em;
-    padding-right: 6em;
+    padding-right: 4em;
     padding-bottom: .5em;
     float: left;
 }
